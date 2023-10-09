@@ -3,4 +3,20 @@
 
 def primes(number_of_primes):
     list = []
+    prime_counter = 0
+    trial_number = 2 # initialize it to first prime number
+
+    while prime_counter < number_of_primes:
+        prime = True
+        if len(list) != 0:
+            for prime_number in list:
+                if trial_number % prime_number == 0:
+                    prime = False
+        
+        if prime == True:
+            list.append(trial_number)
+            prime_counter += 1
+        
+        trial_number += 1
+    
     return list
